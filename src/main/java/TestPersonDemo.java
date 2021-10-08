@@ -16,10 +16,39 @@ public class TestPersonDemo
     {
         /********* begin *********/
         // 声明并实例化一Person对象p
+        //------------------------------------------------------
+        long startTime = System.nanoTime();   //获取开始时间
+        //------------------------------------------------------
+        System.out.print("\033[1;92m");
         Person p = new Person();
         p.setAge(18);
         p.setName("张三");
         p.talk();
+        System.out.print("\033[0;0m");
+        //------------------------------------------------------
+        long endTime = System.nanoTime(); //获取结束时间
+        if ((endTime - startTime) < 1000000)
+        {
+            double final_runtime;
+            final_runtime = (endTime - startTime);
+            final_runtime = final_runtime / 1000;
+            System.out.println("算法运行时间： " + final_runtime + "微秒");
+        }
+        else if ((endTime - startTime) >= 1000000 && (endTime - startTime) < 10000000000L)
+        {
+            double final_runtime;
+            final_runtime = (endTime - startTime) / 1000;
+            final_runtime = final_runtime / 1000;
+            System.out.println("算法运行时间： " + final_runtime + "毫秒");
+        }
+        else
+        {
+            double final_runtime;
+            final_runtime = (endTime - startTime) / 10000;
+            final_runtime = final_runtime / 100000;
+            System.out.println("算法运行时间： " + final_runtime + "秒");
+        }
+        //------------------------------------------------------
         // 给p中的属性赋值
 
 
