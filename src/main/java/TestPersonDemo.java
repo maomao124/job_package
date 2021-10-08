@@ -88,7 +88,9 @@ class Person
 
     public void talk()
     {
-        System.out.println("我是：" + name + "，今年：" + age + "岁");
+        StringBuilder s=new StringBuilder();
+        s.append("我是：").append(name).append("，今年：").append(age).append("岁");
+        System.out.println(s);
     }
 
     /********* end *********/
